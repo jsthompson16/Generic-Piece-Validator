@@ -98,4 +98,9 @@ public class Board
 	{
 		this.nRows = nRows;
 	}
+	
+	public boolean isSpaceOccupied(Coordinate c) 
+	{
+		return board.get(c) != null;
+	}
 }

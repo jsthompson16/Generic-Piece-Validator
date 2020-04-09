@@ -56,6 +56,32 @@ public class Coordinate extends Point
 	}
 	
 	/**
+	 * Description
+	 * @param C - the other space on the board
+	 * @return the distance between the points
+	 */
+	public int distanceTo(Coordinate C)
+	{
+		int thisColumn = this.getColumn();
+		int thisRow = this.getRow();
+		int toColumn = C.getColumn();
+		int toRow = C.getRow();
+		
+		int columnDiff = Math.abs(thisColumn - toColumn);
+		int rowDiff = Math.abs(thisRow - toRow);
+		
+		// Check if two spots are diagonal from each other
+		if (thisColumn != toColumn && thisRow != toRow && columnDiff == rowDiff)
+		{
+			return columnDiff;
+		}
+		else 
+		{
+			return columnDiff + rowDiff;
+		}
+	}
+	
+	/**
 	 * @return the row
 	 */
 	public int getRow()
